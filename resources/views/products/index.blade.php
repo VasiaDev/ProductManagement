@@ -25,6 +25,7 @@
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
                 <td>
+                    <a {{-- href="{{ route('product.show', $product->id) }}" --}} class="btn btn-primary">Посмотреть</a>
                     <a {{-- href="{{ route('product.edit', $product->id) }}" --}} class="btn btn-warning">Редактировать</a>
                     <form {{-- action="{{ route('product.destroy', $product->id) }}" --}}  method="POST" style="display:inline;">
                         @csrf
