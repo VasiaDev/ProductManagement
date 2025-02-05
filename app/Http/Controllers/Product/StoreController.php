@@ -13,6 +13,6 @@ class StoreController extends BaseController
         $data = $request->validated();
         $this->service->store($data);
 
-        return redirect()->route('product.create');
+        return redirect()->route('product.index');
     }
 }
