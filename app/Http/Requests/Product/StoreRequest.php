@@ -22,9 +22,18 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
+            'name' => 'required|string|max:100',
             'description' => 'required|string',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/'
+        ];
+
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.max' => 'Name cannot be more than 100 characters',
+            'price.regex' => 'Maximum allowed value is 999999.99',
         ];
     }
 }
