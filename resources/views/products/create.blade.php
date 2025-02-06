@@ -10,7 +10,7 @@
             <div class="p-6">
                 <form action="{{ route('product.store') }}" method="POST">
                     @csrf
-    
+
                     <div class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-secondary mb-2">
