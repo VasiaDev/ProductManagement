@@ -15,7 +15,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
-            <th>Action</th>
+            <th class="ps-5">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -25,12 +25,12 @@
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
                 <td>
-                    <a href="{{ route('product.show', $product->id) }}" class="btn btn-primary">Посмотреть</a>
-                    <a href="{{ route('product.edit', $product->id) }}" class="btn btn-warning">Редактировать</a>
+                    <a href="{{ route('product.show', $product->id) }}"><i class="fa-solid fa-eye fa-xl m-2" style="color: #00aaff;"></i></a>
+                    <a href="{{ route('product.edit', $product->id) }}"><i class="fa-solid fa-pencil fa-xl m-2" style="color: #7b541e;"></i></a>
                     <form action="{{ route('product.delete', $product->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="border-0 bg-transparent"><i class="fa-solid fa-trash-can fa-xl m-2" style="color: #c70000;"></i></button>
                     </form>
                 </td>
             </tr>
