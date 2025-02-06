@@ -21,4 +21,16 @@ class ProductService
             abort(500);
         }
     }
+
+    public function update($data, $product){
+        try {
+            DB::beginTransaction();
+            $product->update($data);
+            DB::commit();
+        }catch (\Exception $exception){
+            DB::rollBack();
+            abort(500);
+        }
+        return $product;
+    }
 }
