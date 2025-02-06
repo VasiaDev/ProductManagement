@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Product;
 
-use App\Http\Controllers\Product\BaseController;
 use App\Http\Requests\Product\StoreRequest;
 
 
