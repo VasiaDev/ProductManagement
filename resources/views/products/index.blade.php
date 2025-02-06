@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h2>All products</h2>
+    <h2 class="mb-3">All products</h2>
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -27,7 +27,7 @@
                 <td>
                     <a {{-- href="{{ route('product.show', $product->id) }}" --}} class="btn btn-primary">Посмотреть</a>
                     <a {{-- href="{{ route('product.edit', $product->id) }}" --}} class="btn btn-warning">Редактировать</a>
-                    <form {{-- action="{{ route('product.destroy', $product->id) }}" --}}  method="POST" style="display:inline;">
+                    <form action="{{ route('product.delete', $product->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

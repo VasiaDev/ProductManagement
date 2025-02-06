@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Adding products</h2>
+        <h2 class="mb-3">Adding products</h2>
 
         <form action="{{ route('product.store') }}" method="POST">
             @csrf
