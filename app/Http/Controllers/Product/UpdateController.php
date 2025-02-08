@@ -12,6 +12,6 @@ class UpdateController extends BaseController
         $data = $request->validated();
         $product = $this->service->update($data, $product);
 
-        return redirect()->route('product.show', compact('product'));
+        return redirect()->route('product.show', compact('product'))->with('success', 'Product updated successfully.');
     }
 }

@@ -9,6 +9,6 @@ class DeleteController extends BaseController
     public function __invoke(Product $product)
     {
         $product->delete();
-        return redirect()->route('product.index', compact('product'));
+        return redirect()->route('product.index', compact('product'))->with('success', 'Product deleted successfully.');
     }
 }

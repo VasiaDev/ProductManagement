@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="max-w-2xl mx-auto px-4 mt-5">
+        @if(session('success'))
+            <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
+                <p>{{ session('success') }}</p>
+            </div>
+        @endif
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="bg-dark p-6">
                 <h2 class="text-2xl font-bold text-light whitespace-normal max-w-2xl break-words">{{ $product->name }}</h2>
